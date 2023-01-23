@@ -16,7 +16,7 @@ Uses only Python Standard Library module:
 
 """
 
-import statistics
+import statistics as stats
 
 # define a variable with some univariant data 
 # (one varabile, many readings)
@@ -78,3 +78,24 @@ scores = [
 # y is dependent on x (e.g. temperature vs hour of day)
 x_times = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 y_temps = [2, 5, 8, 20, 21, 23, 24, 27, 30, 31, 31,32]
+
+meanscr = stats.mean(scores)
+median = stats.median(scores)
+mode = stats.mode(scores)
+variance = stats.variance(scores)
+stddev = stats.stdev(scores)
+slope, intercept = stats.linear_regression(x_times, y_temps)
+hour_future = 13
+temp_future = round(slope * hour_future + intercept)
+
+print(f"""
+Here are some stats about the scores:
+Average score: {meanscr}
+Median score: {median}
+Most common score: {mode}
+Score variance: {variance}
+Score standard deviation: {stddev}
+
+Using the time and temp data, at hour 13, the temp is predicted to be:
+{temp_future} degrees
+""")

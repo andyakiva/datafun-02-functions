@@ -19,7 +19,7 @@ Uses only Python Standard Library module:
 import statistics
 import turtle
 
-ready_for_chart = False  # edit this when ready
+ready_for_chart = True  # edit this when ready
 
 # Descriptive: Univariant Data..................................
 
